@@ -1,12 +1,13 @@
 <template>
     <div>
-        <h3> {{task.title}}</h3>
+        <h3> Habit title: {{habit.title}}, and habit time is {{ habit.time }} </h3>
+        
     </div>  
 </template>
 
 <script setup>
 defineProps({
-    task: {
+    habit: {
         type: Object,
         required: true,
     }
