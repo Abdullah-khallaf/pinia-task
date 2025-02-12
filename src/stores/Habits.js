@@ -20,5 +20,10 @@ export const useHabitStore = defineStore('habitStore', {
         getHabitsDone(){
             return this.habits.filter((H) => H.isDone)
         }
+    },
+    actions:{
+        addHabit(habit){
+            this.habits.push(habit);
+        }
     }
 })

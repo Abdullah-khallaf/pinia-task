@@ -1,7 +1,9 @@
 <template>
-  <main>
-    <header>Hello world from my task master</header>
 
+  <navbar></navbar>
+  <main>
+    <header class="text-3xl font-bold underline">Hello world from my task master</header>
+    <taskForm></taskForm>
     <button @click="filter = 'all-Tasks'">Show All Tasks</button>
     <button @click="filter = 'all-habits'">Show All Habits</button>
     <button @click="filter = 'checkedTasks'">Show Done Tasks</button>
@@ -57,11 +59,15 @@ import { useTaskStore} from "./stores/Tasks";
 import { useHabitStore} from "./stores/Habits";
 import Task from "./components/Task.vue";
 import Habit from "./components/Habit.vue";
+import taskForm from "./components/taskForm.vue";
+import navbar from "./components/NavBar.vue";
 
 export default {
   components: {
     Task,
-    Habit
+    Habit,
+    taskForm,
+    navbar,
   },
   setup() {
     const taskStore = useTaskStore();
