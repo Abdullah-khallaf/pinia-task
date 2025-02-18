@@ -5,7 +5,6 @@ export const useHabitStore = defineStore('habitStore', {
         habits: [
             {id: 5, title:'habit1', time:'09:00 Am', isDone: false },
             {id: 6, title:'habit1', time:'12:30 Pm', isDone: true },
-            {id: 7, title:'habit1', time:'05:00 Pm', isDone: true }
         ]
     }),
     getters: {

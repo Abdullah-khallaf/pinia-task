@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import './style.css'
 import { createPinia } from 'pinia';
 import App from './App.vue';
-// import router from './router';
+import router from './router';
 
 
 // import fontawesome from
@@ -22,5 +22,5 @@ const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.use(createPinia()); // Register Pinia
-// app.use(router)
+app.use(router)
 app.mount('#app');

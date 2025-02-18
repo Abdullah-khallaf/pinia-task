@@ -1,15 +1,3 @@
 <template>
-  <h1>
-    Hello From Home
-  </h1>
+  <h1 class="mt-20 text-center">Hello This Home page</h1>
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>

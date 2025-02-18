@@ -5,8 +5,6 @@ export const useTaskStore = defineStore('taskStore', {
         tasks: [
             {id: 1, title:'task1', isDone: true},
             {id: 2, title:'task2', isDone: false},
-            {id: 3, title:'task3', isDone: true},
-            {id: 4, title:'task4', isDone: false}
         ]
     }),
     getters: {
@@ -25,6 +23,12 @@ export const useTaskStore = defineStore('taskStore', {
     actions:{
         addTask(task){
             this.tasks.push(task)
+            localStorage.setItem('tasks',JSON.stringify(tasks))
+        },
+        removeTask(taskId) {
+            this.tasks = this.tasks.filter(task => task.id !== taskId);
+            localStorage.removeItem('taskTitle')
         }
+        
     }
 })

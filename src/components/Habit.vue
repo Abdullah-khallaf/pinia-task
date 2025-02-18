@@ -22,6 +22,9 @@ defineProps({
         display: flex;
         flex-direction: row;
         align-items: center;
+        height: 50px;
+        background-color: #ffd5a3;
+        margin-bottom: 20px;
     }
     button{
         height: 20px;
