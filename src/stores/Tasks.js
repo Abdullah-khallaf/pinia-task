@@ -2,10 +2,7 @@ import {defineStore} from 'pinia'
 
 export const useTaskStore = defineStore('taskStore', {
     state: () => ({
-        tasks: [
-            {id: 1, title:'task1', isDone: true},
-            {id: 2, title:'task2', isDone: false},
-        ]
+        tasks: JSON.parse(localStorage.getItem("tasks")) || [ ]
     }),
     getters: {
         doneTasks() {
@@ -23,11 +20,11 @@ export const useTaskStore = defineStore('taskStore', {
     actions:{
         addTask(task){
             this.tasks.push(task)
-            localStorage.setItem('tasks',JSON.stringify(tasks))
+            localStorage.setItem('tasks',JSON.stringify(this.tasks))
         },
         removeTask(taskId) {
             this.tasks = this.tasks.filter(task => task.id !== taskId);
-            localStorage.removeItem('taskTitle')
+            localStorage.setItem('tasks',JSON.stringify(this.tasks))
         }
         
     }

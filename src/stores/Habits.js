@@ -2,10 +2,7 @@ import {defineStore} from 'pinia'
 
 export const useHabitStore = defineStore('habitStore', {
     state: () => ({
-        habits: [
-            {id: 5, title:'habit1', time:'09:00 Am', isDone: false },
-            {id: 6, title:'habit1', time:'12:30 Pm', isDone: true },
-        ]
+        habits: JSON.parse(localStorage.getItem("habits")) || [ ]
     }),
     getters: {
         getHabitsCounter(){
@@ -22,7 +19,12 @@ export const useHabitStore = defineStore('habitStore', {
     },
     actions:{
         addHabit(habit){
-            this.habits.push(habit);
+            this.habits.push(habit)
+            localStorage.setItem('habits',JSON.stringify(this.habits))
+        },
+        removeHabit(habitId) {
+            this.habits = this.habits.filter(habit => habit.id !== habitId);
+            localStorage.setItem('habits',JSON.stringify(this.habits))
         }
     }
 })
